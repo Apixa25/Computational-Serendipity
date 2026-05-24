@@ -872,8 +872,9 @@ class ComputationalSerendipity:
                 tier = _get_excitement_tier(interjection.scoring.total if interjection.scoring else 0.5)
                 tier_label = tier["name"].upper()
                 personality_tag = f" | {self.bridge._last_personality.emoji} {self.bridge._last_personality.name}" if self.bridge._last_personality else ""
+                score_display = interjection.scoring.total if interjection.scoring else 0.0
                 print(f"\n{'═' * 70}")
-                print(f"💬 SERENDIPITY SAYS  [{tier_label} | score: {interjection.scoring.total:.2f if interjection.scoring else 0.0}{personality_tag}]:\n")
+                print(f"💬 SERENDIPITY SAYS  [{tier_label} | score: {score_display:.2f}{personality_tag}]:\n")
                 print(f"   \"{interjection.interjection_text}\"")
                 print(f"\n{'═' * 70}")
                 self._print_citations(interjection)
